@@ -2,13 +2,19 @@ package com.example.programmingnotes.android
 
 import android.graphics.Color
 import android.graphics.Paint
+import android.icu.number.Scale
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.nativeCanvas
-import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 
@@ -35,7 +41,7 @@ const val canvas_definition = """
 const val using_canvas = """
     There are 2 ways to use Canvas. The first way, is to create a Canvas
         composable. The second one is by applying .drawBehind{} to a 
-        composable's modifier. Usually, we'll go for the first option
+        composable's modifier. Usually, we'll go for the first option.
 """
 
 
@@ -109,12 +115,30 @@ fun CustomText(
                     color = Color.RED
                     textSize = 50f
                 }
+
             )
         }
     }
 }
 
 
+const val styleTip = """
+    Instead of passing a plethora of arguments to the style parameter, you can create
+        a data class, containing them, as shown below
+"""
+
+
+// ...
+//      style = ScaleStyle(scaleWidth = 150.dp)
+// ...
+
+data class ScaleStyle(
+    val scaleWidth: Dp = 100.dp,
+    val radius: Dp = 550.dp,
+    val normalLineLength: Dp = 15.dp,
+    val fiveStepLineLength: Dp = 25.dp,
+    val tenStepLineLength: Dp = 35.dp
+)
 
 
 
@@ -148,8 +172,7 @@ fun CustomText(
 
 
 
-
-    const val sources =     //Including but not limited to
+const val sources =     //Including but not limited to
     """
     1. 
     2. 
