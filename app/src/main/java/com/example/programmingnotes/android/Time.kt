@@ -37,4 +37,8 @@ const val furtherExplainingTheSecondsVariable = """
         at 00:00:00 UTC, instead of the milliseconds. The modulo operator removes 
         from that all the full 60 seconds cycles, and leaves us with the unfinished one, 
         that sits somewhere between 0 and 59.
+        
+    As the result could be a number with a non zero decimal part, I can do the following.
 """
+
+val secondsNoDecimal = ((currentTime / 1000f) % 60f).toInt().toFloat()

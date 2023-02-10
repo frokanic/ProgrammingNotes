@@ -77,7 +77,10 @@ const val apply_explained = """
 const val drawing_shapes = """
     The Canvas composable gives us a drawscope. Think of it as a list of option you have 
         to draw on a physical canvas. Two important options are center, which is of type 
-        Offset, and size. Other than that, I have drawLine, drawRect ect functions
+        Offset, and size. Other than that, I have drawLine, drawRect ect functions.
+        
+    By default, shapes are filled in Jetpack Compose. I modify that through the style
+        parameter.
 """
 
 
