@@ -2,17 +2,11 @@ package com.example.programmingnotes.android
 
 import android.graphics.Color
 import android.graphics.Paint
-import android.icu.number.Scale
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -50,6 +44,8 @@ const val offset_definition = """
         val "offset" down below, is the point sitting at (5, 5) of the 
         cartesian coordinate system, that starts from the upper left 
         corner of the object's constraints. It is immutable.
+        
+    Offset.Zero represents the (0,0) point in the coordinate system.
 """
 
 val offset = Offset(5f, 5f)
@@ -141,14 +137,26 @@ data class ScaleStyle(
 )
 
 
+const val drawing_shadows = """
+    Canvas does not contain a function to draw shadows. So we'll have to resort to the native
+        Canvas. This is done by drawContext.canvas.nativeCanvas, inside the Canvas 
+        composable, same as texts. It works as in xml
+"""
 
 
+const val colorsARGB = """
+    In Jetpack Compose, Color.argb is a function that creates a color from a combination 
+        of red, green, blue, and alpha values. The alpha value represents the transparency of 
+        the color.
 
+    The value of the alpha channel is an integer between 0 and 255, where 0 means fully 
+        transparent and 255 means fully opaque. An alpha value of 127, for example, means that 
+        the color is 50% transparent. An example is shown down below
+        
+    A good tool for testing argb colors is the: https://color.adobe.com/create/color-wheel
+"""
 
-
-
-
-
+val color = Color.argb(255, 0, 128, 255)
 
 
 
