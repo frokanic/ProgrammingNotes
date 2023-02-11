@@ -12,23 +12,57 @@ import kotlin.random.Random
 
 
 
+const val arrangementAndAlignment = """
+    Columns and rows have a main and a cross axis. 
+    
+    In Columns, we have the verticalArrangement and horizontalAlignment properties.
+        Arrangement is responsible for how the items are distributed in the main axis, 
+        alignment for where the main axis sits in the cross axis. If the modifier is 
+        not set to .fillMaxSize() or .fillMaxWidth, the cross axis is smaller than the
+        x-axis.
+        
+    In Rows, we have the horizontalArrangement and verticalAlignment properties.
+    
+    Boxes have contentAlignment
+"""
 
 
+const val measurementUnits = """
+    dp: Stands for "density-independent pixels". Used to specify the size of UI elements 
+        that should scale proportionally based on the screen density.
+    
+    sp: Stands for "scale-independent pixels". Used to specify the size of text that 
+        should also scale based on the user's preferred font size setting. Used almost 
+        exclusively for text (So for fontSize).
+        
+    Density refers to the number of pixels within a physical area of the screen. It is a 
+        measure of the resolution of a display and is expressed as dots per inch (dpi).
+"""
 
 
-
-
-
-
-
-
-val weightProperty = """
+const val weightProperty = """
     Used only in rows and columns, to give an assigned space to the items of out rows or 
         columns.
 """
 
+const val stackingInCompose = """
+    In Compose, what we put first, goes to the bottom of a stack. Useful for Box composables
+"""
 
-val stateExplained = """
+
+const val fonts = """
+    To create a fontFamily for my texts, I first create a fontFamily variable, that is an 
+        object of the FontFamily class, and takes Font(R.font.<font name>, FontWeight.<font weight>
+        as parameters. This is created outside my composable functions, so it has a global 
+        scope, and is not affected by recompositions.
+        
+    Then, I pass the object to the fontFamily property, in the Text()'s constructor.
+    
+    Fonts can be found and downloaded here: https://fonts.google.com/
+"""
+
+
+const val stateExplained = """
     In Jetpack Compose, the state refers to the variables or data that are kept track of 
         and can change during the lifetime of a composable. When the state changes, the 
         composable is recomposed, which means that the updated state is used to generate 
@@ -53,7 +87,7 @@ val stateExplained = """
         property.
 """
 
-val rememberKeyword = """
+const val rememberKeyword = """
     By using the remember keyword, as shown below, when a function is recomposed, the latest
         value that was assigned to the variable, remains stored to it. So, the variable is not 
         being reset to its initial value.
